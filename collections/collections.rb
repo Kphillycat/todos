@@ -27,8 +27,9 @@ nu_array << my_array[1]
 #   ["blake", "ashley", "scott"]
 my_hash = {}
 my_array.each do |x| 
+  temp = x.clone
   x[2] = "$" 
-  my_hash[x] = x 
+  my_hash[x] = temp
 end
 # 8. create a hash with two keys, "greater_than_10", "less_than_10" and their values will be an array of any numbers greater than 10 or less than 10 in the following array
 #   [100, 1000, 5, 2, 3, 15, 1, 1, 100 ]
@@ -73,6 +74,12 @@ end
 
 # Count how many times each word appears in my story.
 # Tip: You'll need to use Hash.new(0) to do this rather than creating a hash using literal syntax like {}.
+story = %w{The summer of tenth grade was the best summer of my life.  I went to the beach everyday and we had amazing weather.  The weather didnt really vary much and was always pretty hot although sometimes at night it would rain.  I didnt mind the rain because it would cool everything down and allow us to sleep peacefully.  Its amazing how much the weather affects your mood.  Who would have thought that I could write a whole essay just about the weather in tenth grade.  Its kind of amazing right?  Youd think for such an interesting person I might have more to say but you would be wrong}
+#coverts string to array of words
+word_count_hash = Hash.new(0)
+story.each { |word| word_count_hash[word] +=1 }
+	
+puts word_count_hash
 
 # song library
 
@@ -83,3 +90,14 @@ end
 # to a nested hash of the form
 # {:artist1 => :songs => [], :artist2 => :songs => []}
 # []
+# song_artist_array =["dave matthews band - tripping billies", "dave matthews band - #41", "calvin harris - some techno song", "avicii - some other dance song", "oasis - wonderwall", "oasis - champagne supernova"]
+# song_hash = {}
+# songs = []
+# song_array.each do |x|
+# 	artist = x.split("-")[0]
+# 	song = x.split("-")[1]
+
+# 	song_hash[artist] = songs << song
+	
+# end
+# puts song_hash
