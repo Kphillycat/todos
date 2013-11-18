@@ -12,21 +12,27 @@
 ##Challenge
 #After successfully completing the previous game (there should be a commit with a working version of this game), alter the game so that a player can "hit" as many times as they want.
 
+def play(cards)
+	nu_card = rand(11)+1
+	cards << nu_card
+	nu_card
+end
 
 hit_count = 0
 cards = [rand(11)+1, rand(11)+1]
 sum = cards[0] + cards[1]
-puts "The total score of your cards is " + sum.to_s
-puts "Would you like to hit?"
-hit_ans = gets.chomp.downcase
-while hit_ans == "yes" && hit_count < 2
-	nu_card = rand(11)+1
-	cards << nu_card
-	hit_count += 1
-	sum += nu_card
+hit_ans = "yes"
+
+while hit_count < 2
 	puts "The total score of your cards is " + sum.to_s
-	puts "Would you like to hit?"
-	hit_ans = gets.chomp.downcase
+    puts "Would you like to hit? (hit num: " + hit_count.to_s + ") "
+    hit_ans = gets.chomp.downcase
+	if hit_ans == "yes"
+		hit_count += 1
+		sum += play(cards)
+	else
+		break
+	end
 end
 
 if sum > 21
