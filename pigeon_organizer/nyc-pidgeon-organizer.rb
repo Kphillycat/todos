@@ -24,27 +24,32 @@ pigeon_data = {
 }
 
 pigeon_list = {}
-color_hash = {}
-color_array = []
 
+#Iterate over color
 pigeon_data[:color].each do |k,v|
- 
   v.each do |name|
-      pigeon_list[name] = :color
-      pigeon_list[name] = {:color => []}
+      # pigeon_list[name] = {} unless pigeon_list[name]
+      # pigeon_list[name][:color] = [] unless pigeon_list[name][:color]
+      if pigeon_list[name].nil?
+        pigeon_list[name] = {}
+        if pigeon_list[name][:color].nil?
+          pigeon_list[name] = :color
+          pigeon_list[name] = {:color => []}
+      end
+    end
       pigeon_list[name][:color] << k.to_s
     end
 end
 
+#Iterate over gender
 pigeon_data[:gender].each do |k,v|
-
   v.each do |k2|
       pigeon_list[k2][:gender] = k.to_s
   end    
 end
 
+#Iterate over lives
 pigeon_data[:lives].each do |k,v|
-
   v.each do |k2|
       pigeon_list[k2][:lives] = k.to_s
     end    
