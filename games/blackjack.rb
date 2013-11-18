@@ -21,9 +21,8 @@ end
 hit_count = 0
 cards = [rand(11)+1, rand(11)+1]
 sum = cards[0] + cards[1]
-hit_ans = "yes"
 
-while hit_count < 2
+until sum >= 21
 	puts "The total score of your cards is " + sum.to_s
     puts "Would you like to hit? (hit num: " + hit_count.to_s + ") "
     hit_ans = gets.chomp.downcase
@@ -35,7 +34,7 @@ while hit_count < 2
 	end
 end
 
-if sum > 21
+if sum >= 21
 	puts "Winner! With a total of " + sum.to_s
 else
 	puts "Sorry, you lose with a total of " + sum.to_s
