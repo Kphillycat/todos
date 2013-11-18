@@ -1,10 +1,16 @@
-def FizzBuzz(number)
-	if number % 3 == 0
-		puts "Fizz"
+def FizzBuzz(number)	
+	if number % 3 == 0 && number % 5 == 0
+		"FizzBuzz"
 	elsif number % 5 == 0
-		puts "Buzz"
-	elsif number % 15 == 0
-		puts "FizzBuzz"
+		"Buzz"
+	elsif number % 3 == 0 
+		"Fizz"
 	else
-		number
+		number			
+	end
 end
+
+# for i in 1..100
+# 	puts i.to_s 
+# 	puts FizzBuzz(i)
+# end
