@@ -29,7 +29,7 @@ my_hash = {}
 my_array.each do |x| 
   temp = x.clone
   x[2] = "$" 
-  my_hash[x] = temp
+  my_hash[temp] = x
 end
 # 8. create a hash with two keys, "greater_than_10", "less_than_10" and their values will be an array of any numbers greater than 10 or less than 10 in the following array
 #   [100, 1000, 5, 2, 3, 15, 1, 1, 100 ]
