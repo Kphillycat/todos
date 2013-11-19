@@ -50,23 +50,18 @@ holiday_supplies = {
 # ex: `holiday_supplies[:spring][:memorial_day][0]`
 holiday_supplies[:summer][:forth_of_july][1]
 
-#
-
 # 2. Add a supply to a Winter holiday.
 holiday_supplies[:winter][:christmas] << "Santa"
 
 # 3. Add a supply to memorial day.
-
 holiday_supplies[:spring][:memorial_day] << "Dranks"
 
 # 4. Add a new holiday to any season with supplies.
-
 holiday_supplies[:summer][:Keef_Bday] = []
 holiday_supplies[:summer][:Keef_Bday] << "Foodz"
 
 # 5. Write a method to collect all Winter supplies from all the winter holidays.
 # ex: `winter_suppliers(holiday_supplies) #=> ["Lights", "Wreath", etc]`
-
 puts "Winter Supplies"
 def winter_suppliers(holiday_supplies)
   winter_supply_array = []
@@ -106,7 +101,6 @@ end
 puts "\n"
   
 # 7. Write a method to collect all holidays with BBQ.
-
 # `holidays_with_bbqs(holiday_supplies) #=> [:fourth_of_july, :memorial_day]`
 
 def holidays_with_bbqs(holiday_supplies)
