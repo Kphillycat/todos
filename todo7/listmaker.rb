@@ -9,10 +9,5 @@
 # e.g make_list(["ich", "ni", "san"]) #=> ["1. ich", "2. ni", "3. san"]
 
 def make_list(array)
-	count = 0
-	array.each do |word|
-		array[count] = (count+1).to_s + ". " + word
-		count+=1
-	end
-	array
+	array.map.with_index {|word,index| "#{index+1}. #{word}"}
 end
