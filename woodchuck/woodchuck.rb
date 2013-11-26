@@ -20,14 +20,13 @@ class Woodchuck
 
 end
 
-woodchuck_army = []
 total_chucked_wood = 0
 
 rand(1..10).times do 
-  woodchuck_army << Woodchuck.new
+  Woodchuck.new
 end
 
-woodchuck_army.each do |woodchuck|
+Woodchuck::WOODCHUCKS.each do |woodchuck|
   rand(1..10).times do
     woodchuck.chuck_wood
   end
