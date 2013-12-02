@@ -14,8 +14,13 @@ def shorten_tweet(tweet)
 end
 
 def shorten_list_tweet(tweet_list)
+
 	tweet_list.each_with_index do |tweet,index|
-		puts "#{index+1}. " + shorten_tweet(tweet)
+		if tweet.chars.count > 140
+			puts "#{index+1}. " + shorten_tweet(tweet)
+		else
+			puts "#{index+1}. #{tweet}"
+		end
 	end
 
 end
