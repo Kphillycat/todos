@@ -10,7 +10,7 @@ def shorten_tweet(tweet)
 	tweet.gsub!(" you "," u ")
 	tweet.gsub!(" at "," @ ")
 	tweet.gsub!(" and "," & ")
-	tweet
+	tweet.slice(0..140)
 end
 
 def shorten_list_tweet(tweet_list)
