@@ -32,22 +32,10 @@
 
 
 def array_init (size=5)
-	the_array = []
-	i = 0
 	if block_given?
-		size.times do |count|
-			initialization = yield count
-			the_array << initialization
-		end
-
-	
+		the_array = Array.new(size){|index| yield index}
 	else
-		while i < size
-			value = i * 100
-			the_array[i] = value.to_s
-			i+=1
-			the_array.to_s
-		end
+		the_array = Array.new(size){|index| (index*100).to_s}
 	end
 	the_array
 end
