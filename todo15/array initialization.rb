@@ -43,8 +43,10 @@ def array_init (size=5)
 	
 	else
 		while i < size
-			the_array[i] = i * 100
+			value = i * 100
+			the_array[i] = value.to_s
 			i+=1
+			the_array.to_s
 		end
 	end
 	the_array
