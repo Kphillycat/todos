@@ -9,11 +9,12 @@ def jukebox(command)
   end
 end
 
-def list_artist(artist, album_hash)
+def list_artist(artist, album_hash, one_artist=false)
    artist_list = "\n---------------\n"
    artist_list += "#{artist}:\n"
    artist_list += "---------------"
-   album_hash[artist][:albums].each do |album_name, songs_hash|
+   album_hash = album_hash[artist] if one_artist
+   album_hash[:albums].each do |album_name, songs_hash|
      artist_list += "\n#{album_name}:\n\t"
      artist_list += songs_hash[:songs].join("\n\t")
    end
@@ -35,12 +36,12 @@ def parse_artist(command, lib)
   cmd = command.to_sym
   parsed = false
   if lib.has_key?(cmd)
-    puts list_artist(command, lib[cmd])
+    puts list_artist(command, lib[cmd], true)
     parsed = false
   else
     lib.each do |artist, hash|
       if command.downcase == artist.to_s.gsub("_"," ").downcase
-        puts list_artist(artist, lib)
+        puts list_artist(artist, lib, true)
         parsed = true
         break
       end
