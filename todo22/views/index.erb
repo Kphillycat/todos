@@ -1,0 +1,7 @@
+<h1>Is it my birthday yet?</h1>
+<h1><% if @time.day == 22 && @time.month == 06 %>
+YES!
+<% else %>
+NO!
+<% end %></h1>
+<h2>Today is <%=@time.month%>/<%= @time.day %>/<%=@time.year %> </h2>
