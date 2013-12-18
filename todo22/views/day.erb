@@ -1,0 +1,16 @@
+<form action="/" method="POST">
+	<label for="month">Month</label>
+	<select id="month" name="month">
+		<% 1.upto(12) do |m| %>
+		<option value="<%= m %>"><%= m %></option>
+		<% end %> 
+	</select>
+	<label for="day">Day</label>
+	<select id="day" name="day">
+		<% 1.upto(31) do |d| %>
+		<option value="<%= d %>"><%= d %></option>
+		<% end %> 
+	</select>
+	<br />
+	<button type="submit">Submit</button>
+</form>

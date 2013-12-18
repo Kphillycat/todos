@@ -16,6 +16,10 @@ module Name
 
     #routes
     get '/' do
+      erb :day
+    end
+
+    post '/' do
       @time = Time.new
       erb :index
     end
