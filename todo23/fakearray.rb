@@ -21,7 +21,8 @@
 
 class FakeArray
 	attr_accessor :fakearray
-  def initialize()
+  def initialize(*args)
+  	 @fakearray = *args
   end
 
   def each
@@ -34,9 +35,8 @@ class FakeArray
     @fakearray[0]
   end
 
-  def [](*args)
-    @fakearray = *args
-	@fakearray
+  def [](index)
+	@fakearray[index]
   end
 
 end
