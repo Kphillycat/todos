@@ -3,7 +3,7 @@ require './fakearray'
 describe "#[]" do
 	it "should return an value of the fakearray at a given index" do
 		test_fakeness = FakeArray.new(1,2,3)
-		expect(test_fakeness.[](1) ).to eq(2)
+		expect(test_fakeness[1] ).to eq(2)
 	end
 
 	it "should return the first element of the array" do
