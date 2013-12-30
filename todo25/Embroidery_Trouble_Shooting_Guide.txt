@@ -1,0 +1,22 @@
+http://sewingandembroiderywarehouse.com/embtrb.htm
+ 
+there is something wrong with this page.
+ 
+using your web inspector identify what is wrong.
+ 
+as algorithmically as possible, explain why this error causes this visual effect.
+ 
+ 
+what are the other things wrong with this page? why do you think they are wrong?
+ 
+when was this page made? how? tell how you figured it out.
+
+Answers:
+The text is getting progressively larger as you go down the page. It's all <h3s> with text size to 1.17em. Em is used to scale based on current size of the font.
+- Uses inline-styling with nested <h3> which increases the font-size by 1.17em. If you have one <h3> then all the others will inherit from.
+- Styling using HTML attributes
+- Not semantic tags. Doesn't describe the value of the content.
+- Use of old <font>, <center> and tables tags
+- Was made with Microsoft FrontPage 5.0,
+- HTML 3.2
+- Could use the CSS reset to override the browser stylesheet. http://meyerweb.com/eric/tools/css/reset/
