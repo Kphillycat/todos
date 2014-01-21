@@ -1,10 +1,12 @@
 function FizzBuzz(NumNum){
+	if(NumNum % 15 == 0)
+		return("FizzBuzz");
 	if(NumNum % 3 == 0)
-		console.log("Fizz");
+		return("Fizz");
 	if(NumNum % 5 == 0)
-		console.log("Buzz");
+		return("Buzz");
 }
 
 for(var i = 1; i <= 100; i++){
-	console.log(i) + FizzBuzz(i);
+	console.log(i) + console.log(FizzBuzz(i));
 }
